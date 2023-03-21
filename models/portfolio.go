@@ -19,7 +19,7 @@ type Portfolio struct {
 }
 
 func NewPortfolio(
-	title, description, path, category, section string,
+	title, description, path, category string,
 	frameworks, images []string) *Portfolio {
 	return &Portfolio{
 		ID:          primitive.NewObjectID(),

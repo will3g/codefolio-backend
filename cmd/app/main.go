@@ -25,10 +25,11 @@ func main() {
 
 	router := mux.NewRouter()
 
-	// router.HandleFunc("/portfolio/", handlers.GetPortfolio(db)).Methods(http.MethodGet)
-	// router.HandleFunc("/portfolio/", handlers.CreatePortfolio(db)).Methods(http.MethodPost)
-	// router.HandleFunc("/portfolio/{id}", handlers.UpdatePortfolio(db)).Methods(http.MethodPut)
-	// router.HandleFunc("/portfolio/{id}", handlers.DeletePortfolio(db)).Methods(http.MethodDelete)
+	router.HandleFunc("/portfolios/", handlers.GetPortfolios(db)).Methods(http.MethodGet)
+	router.HandleFunc("/portfolio/", handlers.GetPortfolio(db)).Methods(http.MethodGet)
+	router.HandleFunc("/portfolio/", handlers.UpdatePortfolio(db)).Methods(http.MethodPut)
+	router.HandleFunc("/portfolio/", handlers.CreatePortfolio(db)).Methods(http.MethodPost)
+	router.HandleFunc("/portfolio/", handlers.DeletePortfolio(db)).Methods(http.MethodDelete)
 
 	router.HandleFunc("/articles/", handlers.GetArticles(db)).Methods(http.MethodGet)
 	router.HandleFunc("/article/", handlers.GetArticle(db)).Methods(http.MethodGet)
